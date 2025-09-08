@@ -71,6 +71,7 @@ python client.py --host 127.0.0.1 --port 5001 login alice alice123
 ```
 * Exemplo no terminal:
 ![Legenda da imagem](src/img/Captura%20de%20tela%201.png)
+<br/>
 
 Se for bem-sucedido, copie o token retornado.
 
@@ -81,6 +82,7 @@ python client.py --host 127.0.0.1 --port 5001 post <seu_token_aqui> "Minha prime
 ```
 * Exemplo no terminal:
 ![Legenda da imagem](src/img/Captura%20de%20tela%202.png)
+<br/>
 
 #### 3. Verificar a Replicação
 
@@ -88,6 +90,8 @@ Nos terminais dos nós 2 e 3, digite `dump` para ver a mensagem replicada.
 
 * Exemplo no terminal:
 ![Legenda da imagem](src/img/Captura%20de%20tela%203.png)
+<br/>
+
 
 #### 4. Postar uma Mensagem Privada
 
@@ -102,6 +106,7 @@ python client.py --host 127.0.0.1 --port 5002 post <seu_token_porta_5002_aqui> "
 
 * Exemplo no terminal:
 ![Legenda da imagem](src/img/Captura%20de%20tela%205.png)
+<br/>
 
 #### 5. Ler as Mensagens
 
@@ -112,6 +117,7 @@ python client.py --host 127.0.0.1 --port 5002 post <seu_token_porta_5002_aqui> "
 
   * Exemplo no terminal:
   ![Legenda da imagem](src/img/Captura%20de%20tela%208.png)
+<br/>
 
 - **Todas as mensagens (com token):**
   ```bash
@@ -119,7 +125,7 @@ python client.py --host 127.0.0.1 --port 5002 post <seu_token_porta_5002_aqui> "
   ```
   * Exemplo no terminal:
   ![Legenda da imagem](src/img/Captura%20de%20tela%209.png)
-
+<br/>
 ---
 
 ### 4. Simular uma Falha
@@ -128,6 +134,7 @@ python client.py --host 127.0.0.1 --port 5002 post <seu_token_porta_5002_aqui> "
 
 * Exemplo no terminal:
 ![Legenda da imagem](src/img/Captura%20de%20tela%2010.png)
+<br/>
 
 2. No cliente, poste novas mensagens:
   * Use o ultimo token feito pelo login do user bob ou faca login novamente:
@@ -141,11 +148,13 @@ python client.py --host 127.0.0.1 --port 5002 post <seu_token_porta_5002_aqui> "
 
    * Exemplo no terminal:
   ![Legenda da imagem](src/img/Captura%20de%20tela%2011.png)
+<br/>
 
 3. Use `dump` nos nós 2 e 3 para verificar a replicação.
 
 * Exemplo no terminal:
 ![Legenda da imagem](src/img/Captura%20de%20tela%2012.png)
+<br/>
 
 4. No Nó 1, digite `resume` para reativar a comunicação.
 
@@ -153,7 +162,7 @@ python client.py --host 127.0.0.1 --port 5002 post <seu_token_porta_5002_aqui> "
 
 * Exemplo no terminal:
 ![Legenda da imagem](src/img/Captura%20de%20tela%2013.png)
-
+<br/>
 ---
 
 ## ℹ️ Notas
