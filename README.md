@@ -1,4 +1,4 @@
-# Serviço de Mensagens Distribuídas (Atualizado)
+# Serviço de Mensagens Distribuídas 
 
 ---
 
