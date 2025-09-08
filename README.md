@@ -69,6 +69,8 @@ Abra um **quarto terminal** para o cliente.
 ```bash
 python client.py --host 127.0.0.1 --port 5001 login alice alice123
 ```
+* Exemplo no terminal:
+![Legenda da imagem](src/img/Captura%20de%20tela%201.png)
 
 Se for bem-sucedido, copie o token retornado.
 
@@ -77,16 +79,29 @@ Se for bem-sucedido, copie o token retornado.
 ```bash
 python client.py --host 127.0.0.1 --port 5001 post <seu_token_aqui> "Minha primeira mensagem!"
 ```
+* Exemplo no terminal:
+![Legenda da imagem](src/img/Captura%20de%20tela%202.png)
 
 #### 3. Verificar a Replicação
 
 Nos terminais dos nós 2 e 3, digite `dump` para ver a mensagem replicada.
 
+* Exemplo no terminal:
+![Legenda da imagem](src/img/Captura%20de%20tela%203.png)
+
 #### 4. Postar uma Mensagem Privada
 
 ```bash
-python client.py --host 127.0.0.1 --port 5002 post <seu_token_aqui> "Esta é uma mensagem secreta." --private
+  python client.py --host 127.0.0.1 --port 5002 login bob bob123
 ```
+* Lembre-se de copiar o token gerado novamente 
+
+```bash
+python client.py --host 127.0.0.1 --port 5002 post <seu_token_porta_5002_aqui> "Esta é uma mensagem secreta." --private
+```
+
+* Exemplo no terminal:
+![Legenda da imagem](src/img/Captura%20de%20tela%205.png)
 
 #### 5. Ler as Mensagens
 
@@ -94,23 +109,50 @@ python client.py --host 127.0.0.1 --port 5002 post <seu_token_aqui> "Esta é uma
   ```bash
   python client.py --host 127.0.0.1 --port 5003 get
   ```
+
+  * Exemplo no terminal:
+  ![Legenda da imagem](src/img/Captura%20de%20tela%208.png)
+
 - **Todas as mensagens (com token):**
   ```bash
   python client.py --host 127.0.0.1 --port 5003 get --token <seu_token_aqui>
   ```
+  * Exemplo no terminal:
+  ![Legenda da imagem](src/img/Captura%20de%20tela%209.png)
 
 ---
 
 ### 4. Simular uma Falha
 
 1. No terminal do Nó 1, digite `pause`.
+
+* Exemplo no terminal:
+![Legenda da imagem](src/img/Captura%20de%20tela%2010.png)
+
 2. No cliente, poste novas mensagens:
-   ```bash
-   python client.py --host 127.0.0.1 --port 5002 post <seu_token_aqui> "Mensagem postada durante a falha."
+  * Use o ultimo token feito pelo login do user bob ou faca login novamente:
+  ```bash
+   python client.py --host 127.0.0.1 --port 5002 login bob bob123
    ```
-3. Use `dump` nos nós para verificar a replicação.
+  * Lembre-se de copiar o token gerado novamente 
+   ```bash
+   python client.py --host 127.0.0.1 --port 5002 post <seu_token_porta_5002_aqui> "Mensagem postada durante a falha."
+   ```
+
+   * Exemplo no terminal:
+  ![Legenda da imagem](src/img/Captura%20de%20tela%2011.png)
+
+3. Use `dump` nos nós 2 e 3 para verificar a replicação.
+
+* Exemplo no terminal:
+![Legenda da imagem](src/img/Captura%20de%20tela%2012.png)
+
 4. No Nó 1, digite `resume` para reativar a comunicação.
+
 5. Use `dump` novamente para ver a reconciliação.
+
+* Exemplo no terminal:
+![Legenda da imagem](src/img/Captura%20de%20tela%2013.png)
 
 ---
 
